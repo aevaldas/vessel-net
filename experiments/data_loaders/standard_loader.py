@@ -25,10 +25,10 @@ class DataLoader(DataLoaderBase):
 	def _access_dataset(self,origin_path,groundtruth_path,datatype):
 		"""
 
-		:param origin_path:  原始图片路径(path for original image)
-		:param groundtruth_path:  GT图片路径(path for groundtruth image)
-		:param datatype:  图片格式(dataType for origin and gt)
-		:return:  张量类型（Tensor） imgs， groundTruth
+		:param origin_path:  Original image path (path for original image)
+		:param groundtruth_path:  GT image path (path for groundtruth image)
+		:param datatype:  Image format (dataType for origin and gt)
+		:return:  Tensor type imgs, groundTruth
 		"""
 		orgList = glob.glob(origin_path+"*."+datatype) #文件名列表 original image filename list
 		gtList = glob.glob(groundtruth_path+"*."+datatype) #groundtruth 文件名列表 groundtruth image filename list

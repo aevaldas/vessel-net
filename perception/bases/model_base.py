@@ -3,16 +3,16 @@
 
 class ModelBase(object):
     """
-    模型基类
+    Model base class
     """
 
     def __init__(self, config):
-        self.config = config  # 配置
-        self.model = None  # 模型
+        self.config = config  # Configuration
+        self.model = None  # model
 
     def save(self):
         """
-        存储checkpoint, 路径定义于配置文件中
+        Store checkpoint, the path is defined in the configuration file
         """
         if self.model is None:
             raise Exception("[Exception] You have to build the model first.")
@@ -24,7 +24,7 @@ class ModelBase(object):
 
     def load(self, checkpoint_path):
         """
-        加载checkpoint, 路径定义于配置文件中
+        Load checkpoint, the path is defined in the configuration file
         """
         if self.model is None:
             raise Exception("[Exception] You have to build the model first.")
@@ -35,6 +35,6 @@ class ModelBase(object):
 
     def build_model(self):
         """
-        构建模型
+        Building a model
         """
         raise NotImplementedError

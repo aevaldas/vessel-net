@@ -10,7 +10,7 @@ from configs.utils.utils import mkdir_if_not_exist
 
 def get_config_from_json(json_file):
     """
-    将配置文件转换为配置类
+    Convert a configuration file to a configuration class
     change json file to dictionary
     """
     with open(json_file, 'r') as config_file:
@@ -23,10 +23,10 @@ def get_config_from_json(json_file):
 
 def process_config(json_file):
     """
-    解析Json文件
+    Parsing Json files
     solve json file
-    :param json_file: 配置文件
-    :return: 配置类
+    :param json_file: Configuration file
+    :return: Configuration class
     """
     config, _ = get_config_from_json(json_file)
     config.val_groundtruth_path = os.path.join("./experiments", config.exp_name, "dataset/validate/groundtruth/")

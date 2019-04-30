@@ -61,9 +61,9 @@ class DataGenerator():
 
 	def _CenterSampler(self,attnlist,class_weight,Nimgs):
 		"""
-		围绕目标区域采样
-		:param attnlist:  目标区域坐标
-		:return: 采样的坐标
+		Sampling around the target area
+		:param attnlist:  Target area coordinates
+		:return: Sampling coordinates
 		"""
 		class_weight = class_weight / np.sum(class_weight)
 		p = random.uniform(0, 1)
@@ -99,11 +99,11 @@ class DataGenerator():
 
 	def _genDef(self,train_imgs,train_masks,attnlist,class_weight):
 		"""
-		图片取块生成器模板
-		:param train_imgs: 原始图
-		:param train_masks:  原始图groundtruth
-		:param attnlist:  目标区域list
-		:return:  取出的训练样本
+		Image block generator template
+		:param train_imgs: The original image
+		:param train_masks:  Original map groundtruth
+		:param attnlist:  Target area list
+		:return:  Take out training samples
 		"""
 		while 1:
 			Nimgs=train_imgs.shape[0]
@@ -120,7 +120,7 @@ class DataGenerator():
 
 	def train_gen(self):
 		"""
-		训练样本生成器
+		Training sample generator
 		"""
 		class_weight=[1.0,0.0]
 		attnlist=[np.where(self.train_gt[:,0,:,:]==np.max(self.train_gt[:,0,:,:]))]
@@ -128,7 +128,7 @@ class DataGenerator():
 
 	def val_gen(self):
 		"""
-		验证样本生成器
+		Verify sample generator
 		"""
 		class_weight = [1.0,0.0]
 		attnlist = [np.where(self.val_gt[:, 0, :, :] == np.max(self.val_gt[:, 0, :, :]))]

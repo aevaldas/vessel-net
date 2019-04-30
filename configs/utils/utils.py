@@ -6,11 +6,11 @@ import numpy as np
 
 def mkdir_if_not_exist(dir_name, is_delete=False):
     """
-    创建文件夹
+    Create folder
     create dir
-    :param dir_name: 文件夹列表
-    :param is_delete: 是否删除
-    :return: 是否成功
+    :param dir_name: Folder list
+    :param is_delete: delete or not
+    :return: whether succeed
     """
     try:
         if is_delete:
@@ -36,10 +36,10 @@ def write_hdf5(arr,outfile):
 
 def genMasks(masks,channels):
     """
-    为groundtruth生成相反的掩膜
+    Generate opposite masks for groundtruth
     generate masks for groundtruth
-    :param masks:  groundtruth图
-    :param channels: 通道数
+    :param masks:  Groundtruth diagram
+    :param channels: Number of channels
     :return:
     """
     assert (len(masks.shape) == 4)
@@ -60,10 +60,10 @@ def genMasks(masks,channels):
 
 def gray2binary(image,threshold=0.5):
     """
-    灰度图二值化
-    :param image: 灰度图
-    :param threshold: 二值化阈值
-    :return: 二值图
+    Grayscale binarization
+    :param image: Grayscale
+    :param threshold: Binarization threshold
+    :return: Binary map
     """
     image = (image >= threshold) * 1
     return image
@@ -96,10 +96,10 @@ def colorize(img,gt,prob):
 
 def visualize(image,subplot):
     """
-    将多张大小相同的图片拼接
-    :param image: 图片列表
-    :param subplot: 行列数[row,col]
-    :return: 拼接图
+    Splicing multiple images of the same size
+    :param image: Picture list
+    :param subplot: Number of rows and columns [row, col]
+    :return: Mosaic picture
     """
     row=int(subplot[0])
     col=int(subplot[1])

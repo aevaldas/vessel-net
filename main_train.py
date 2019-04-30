@@ -10,7 +10,7 @@ import numpy as np
 
 def main_train():
     """
-    训练模型
+    Training model
 
     :return:
     """

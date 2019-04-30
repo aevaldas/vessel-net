@@ -1,6 +1,6 @@
 class TrainerBase(object):
     """
-    训练器基类
+    Trainer base class
     """
 
     def __init__(self, model, data, config):
@@ -10,6 +10,6 @@ class TrainerBase(object):
 
     def train(self):
         """
-        训练逻辑
+        Training logic
         """
         raise NotImplementedError

@@ -4,9 +4,9 @@ import cv2
 
 def get_test_patches(img, config,rl=False):
     """
-    将待分割图预处理后，分割成patch
-    :param img: 待分割图
-    :param config: 配置文件
+    After the image to be split is preprocessed, it is divided into patches.
+    :param img: To be divided
+    :param config: Configuration file
     :return:
     """
     test_img = []
@@ -23,9 +23,9 @@ def get_test_patches(img, config,rl=False):
 
 def paint_border(imgs,config):
     """
-    将图片补足到可被完美分割状态
-    :param imgs:  预处理后的图片
-    :param config: 配置文件
+    Fill the picture to a state that can be perfectly segmented
+    :param imgs:  Preprocessed image
+    :param config: Configuration file
     :return:
     """
     assert (len(imgs.shape) == 4)
@@ -47,10 +47,10 @@ def paint_border(imgs,config):
 
 def extract_patches(full_imgs, config):
     """
-    按顺序分割patch
-    :param full_imgs: 补足后的图片
-    :param config: 配置文件
-    :return: 分割后的patch
+    Split patches in order
+    :param full_imgs: Complemented picture
+    :param config: Configuration file
+    :return: Split patch
     """
     assert (len(full_imgs.shape)==4)  #4D arrays
     img_h = full_imgs.shape[1]  #height of the full image
@@ -73,9 +73,9 @@ def extract_patches(full_imgs, config):
 
 def pred_to_patches(pred,config):
     """
-    将预测的向量 转换成patch形态
-    :param pred: 预测结果
-    :param config: 配置文件
+    Convert the predicted vector to patch form
+    :param pred: forecast result
+    :param config: Configuration file
     :return: Tensor [-1，patch_height,patch_width,seg_num+1]
     """
     assert (len(pred.shape)==3)  #3D array: (Npatches,height*width,2)
@@ -87,10 +87,10 @@ def pred_to_patches(pred,config):
 
 def img_process(data,rl=False):
     """
-    预处理图片
-    :param data: 输入图片
-    :param rl: 原始图片是否预处理过
-    :return: 预处理结果
+    Preprocessed picture
+    :param data: Input picture
+    :param rl: Input picture...
+    :return: Pretreatment result
     """
     assert(len(data.shape)==4)
     data=data.transpose(0, 3, 1,2)
@@ -125,12 +125,12 @@ def img_process(data,rl=False):
 
 def recompone_overlap(preds,config,img_h,img_w):
     """
-    将patch拼成原始图片
-    :param preds: patch块
-    :param config: 配置文件
-    :param img_h:  原始图片 height
-    :param img_w:  原始图片 width
-    :return:  拼接成的图片
+    Put the patch into the original picture
+    :param preds: Patch block
+    :param config: Configuration file
+    :param img_h:  Original image height
+    :param img_w:  Original image
+    :return:  Stitched picture
     """
     assert (len(preds.shape)==4)  #4D arrays
 

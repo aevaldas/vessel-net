@@ -3,7 +3,7 @@
 
 class InferBase(object):
     """
-    推断基类
+    Inferred base class
     """
 
     def __init__(self, config):
@@ -11,12 +11,12 @@ class InferBase(object):
 
     def load_model(self, name):
         """
-        加载模型
+        Loading model
         """
         raise NotImplementedError
 
     def predict(self, data):
         """
-        预测结果
+        forecast result
         """
         raise NotImplementedError

@@ -3,7 +3,7 @@
 
 class DataLoaderBase(object):
     """
-    数据加载的基类
+    Base class for data loading
     """
 
     def __init__(self, config):
@@ -11,18 +11,18 @@ class DataLoaderBase(object):
 
     def prepare_dataset(self):
         """
-        将原始数据转换为hdf5格式
+        Convert raw data to hdf5 format
         """
         raise NotImplementedError
 
     def get_train_data(self):
         """
-        获取训练数据
+        Get training data
         """
         raise NotImplementedError
 
     def get_val_data(self):
         """
-        获取验证数据
+        Get verification data
         """
         raise NotImplementedError
