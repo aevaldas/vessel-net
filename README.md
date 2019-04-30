@@ -1,20 +1,13 @@
-#### you can find here
-
-- [VesselNet](#vesselnet)
-    - [About Model](#about-model)
-    - [Mertic](#mertic)
-    - [Project Structure](#project-structure)
-        - [First to run](#first-to-run)
-        - [Pretrained Model](#pretrained-model)
-        - [Test your own image](#test-your-own-image)
-    - [Reference](#reference)
-    - [Future Work](#future-work)
-        
-
 # VesselNet
 A DenseBlock-Unet for Retinal Blood Vessel Segmentation
 
 ![TestResult](https://i.imgur.com/pPMANyZ.jpg)
+
+- [Project Structure](#project-structure)
+    - [First to run](#first-to-run)
+    - [Pretrained Model](#pretrained-model)
+    - [Test your own image](#test-your-own-image)
+- [Reference](#reference)
 
 ## Result Evaluation
 Tried With 40 images of DRIVE dataset and DenseBlock-Unet model.
