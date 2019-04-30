@@ -1,10 +1,8 @@
 # -- coding: utf-8 --
-import argparse
 import json
-
 import os
-from bunch import Bunch
 
+from bunch import Bunch
 from configs.utils.utils import mkdir_if_not_exist
 
 
@@ -30,13 +28,13 @@ def process_config(json_file):
     """
     config, _ = get_config_from_json(json_file)
     config.val_groundtruth_path = os.path.join("./experiments", config.exp_name, "dataset/validate/groundtruth/")
-    config.val_img_path=os.path.join("./experiments", config.exp_name, "dataset/validate/origin/")
+    config.val_img_path = os.path.join("./experiments", config.exp_name, "dataset/validate/origin/")
     config.train_groundtruth_path = os.path.join("./experiments", config.exp_name, "dataset/train/groundtruth/")
     config.train_img_path = os.path.join("./experiments", config.exp_name, "dataset/train/origin/")
     config.hdf5_path = os.path.join("./experiments", config.exp_name, "hdf5/")
     config.checkpoint = os.path.join("./experiments", config.exp_name, "checkpoint/")
-    config.test_img_path=os.path.join("./experiments", config.exp_name, "test/origin/")
-    config.test_gt_path=os.path.join("./experiments", config.exp_name, "test/groundtruth/")
+    config.test_img_path = os.path.join("./experiments", config.exp_name, "test/origin/")
+    config.test_gt_path = os.path.join("./experiments", config.exp_name, "test/groundtruth/")
     config.test_result_path = os.path.join("./experiments", config.exp_name, "test/result/")
     # 创建文件夹
     mkdir_if_not_exist(config.train_img_path)
@@ -50,7 +48,3 @@ def process_config(json_file):
     mkdir_if_not_exist(config.test_result_path)
 
     return config
-
-
-
-

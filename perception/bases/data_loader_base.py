@@ -1,6 +1,3 @@
-
-
-
 class DataLoaderBase(object):
     """
     Base class for data loading

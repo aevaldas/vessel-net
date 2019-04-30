@@ -1,6 +1,3 @@
-
-
-
 class InferBase(object):
     """
     Inferred base class
